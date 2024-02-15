@@ -1,4 +1,3 @@
-/* eslint no-use-before-define: 0 */ // --> OFF
 import React from 'react';
 // Assuming you have these icons from React Icons or similar
 import {

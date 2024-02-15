@@ -1,4 +1,4 @@
-/* eslint no-use-before-define: 0 */ // --> OFF
+
 import Image from 'next/image';
 
 const Hero = () => {

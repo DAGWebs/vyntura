@@ -1,4 +1,3 @@
-/* eslint no-use-before-define: 0 */ // --> OFF
 import { Brain, Coins, PuzzleIcon, Calendar, Wrench } from 'lucide-react'; // Assuming usage of Heroicons for demonstration
 const FeatureBlock = ({
   title,

@@ -1,6 +1,7 @@
 import FunnelEditor from '@/app/(main)/subaccount/[subaccountId]/funnels/[funnelId]/editor/[funnelPageId]/_components/funnel-editor'
 import { getDomainContent } from '@/lib/queries'
 import EditorProvider from '@/providers/editor/editor-provider'
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import React from 'react'
 
@@ -15,6 +16,7 @@ const Page = async ({
   )
 
   if (!pageData || !domainData) return notFound()
+
 
   return (
     <EditorProvider
