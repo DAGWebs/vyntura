@@ -16,14 +16,14 @@ const Docs = () => {
             you must be part of an Agency or create a sub-account under one.
           </p>
           <p className='mb-4'>
-            Start by{' '}
+            Start by 
             <strong className='font-bold'>registering a new account</strong>.
             You can opt for a free account or select a paid plan for full
             access. Once registered, you will need to register your organization
-            as an "Agency" within Ventura.
+            as an Agency within Ventura.
           </p>
           <p className='mb-4'>
-            You will be greeted by the{' '}
+            You will be greeted by the 
             <strong className='font-bold'>Launchpad</strong> on your screen,
             your central hub for onboarding. If it is not immediately visible,
             you can access it from the left side navigation bar. Follow the
@@ -46,7 +46,7 @@ const Docs = () => {
           </p>
           <ul className='list-disc pl-5 mb-4'>
             <li className='mb-2'>
-              At the top of the side navigation bar, you will find your{' '}
+              At the top of the side navigation bar, you will find your 
               <strong>Agency Logo and Name</strong>. Clicking the agency name
               reveals a list of all sub-accounts, with an option to create new
               ones.
@@ -141,8 +141,8 @@ const Docs = () => {
           <h3 className='font-semibold mb-2 mt-4'>Getting Started:</h3>
           <ul className='list-disc pl-5 mb-4'>
             <li className='mb-2'>
-              Begin by filling in the basic details of your site, including its{' '}
-              <strong>Name</strong>, <strong>Description</strong>,{' '}
+              Begin by filling in the basic details of your site, including its 
+              <strong>Name</strong>, <strong>Description</strong>, 
               <strong>Subdomain</strong>, and <strong>Favicon</strong>.
             </li>
             <li className='mb-2'>
@@ -221,7 +221,7 @@ const Docs = () => {
       id='docs'
     >
       <h2 className='text-4xl text-center'>
-        {' '}
+         
         Need Some Help Figuring Things Out
       </h2>
       <p className='dark:text-muted-foreground text-white text-center'>

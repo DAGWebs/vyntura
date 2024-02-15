@@ -43,7 +43,7 @@ const About = () => {
               called Pipelines for task management, and numerous add-ons such as
               automations, invoicing, calendar setups, and team management
               tools. We are committed to continuous improvement and actively
-              develop new features to meet our clients' evolving needs.
+              develop new features to meet our clients evolving needs.
             </p>
           </div>
           <div className='md:col-span-3 bg-gradient-to-r from-stone-800 to-gray-900 p-6 rounded-lg shadow-xl text-white'>
