@@ -19,13 +19,13 @@ const Docs = () => {
             Start by{' '}
             <strong className='font-bold'>registering a new account</strong>.
             You can opt for a free account or select a paid plan for full
-            access. Once registered, you'll need to register your organization
+            access. Once registered, you will need to register your organization
             as an "Agency" within Ventura.
           </p>
           <p className='mb-4'>
             You will be greeted by the{' '}
             <strong className='font-bold'>Launchpad</strong> on your screen,
-            your central hub for onboarding. If it's not immediately visible,
+            your central hub for onboarding. If it is not immediately visible,
             you can access it from the left side navigation bar. Follow the
             onboarding steps to fully set up your Agency and unlock all features
             Ventura has to offer.
@@ -46,7 +46,7 @@ const Docs = () => {
           </p>
           <ul className='list-disc pl-5 mb-4'>
             <li className='mb-2'>
-              At the top of the side navigation bar, you'll find your{' '}
+              At the top of the side navigation bar, you will find your{' '}
               <strong>Agency Logo and Name</strong>. Clicking the agency name
               reveals a list of all sub-accounts, with an option to create new
               ones.
@@ -56,7 +56,7 @@ const Docs = () => {
               link.
             </li>
             <li className='mb-2'>
-              <strong>Billing</strong> section for managing your account's
+              <strong>Billing</strong> section for managing your accounts
               financial aspects.
             </li>
             <li className='mb-2'>
@@ -76,7 +76,7 @@ const Docs = () => {
             </li>
             <li className='mb-2'>
               A comprehensive view of <strong>Metrics</strong> on the dashboard
-              page for insights into your agency's performance.
+              page for insights into your agencys performance.
             </li>
           </ul>
         </>
@@ -90,7 +90,7 @@ const Docs = () => {
         <>
           <p className='mb-4'>
             Sub-accounts extend the capabilities of your Agency, allowing you to
-            leverage Ventura's comprehensive toolset for enhanced operational
+            leverage Venturas comprehensive toolset for enhanced operational
             efficiency. Each sub-account has access to:
           </p>
           <ul className='list-disc pl-5 mb-4'>
@@ -133,9 +133,9 @@ const Docs = () => {
       content: (
         <>
           <p className='mb-4'>
-            Ventura's <strong>Funnels</strong> feature empowers you to create
+            Venturas <strong>Funnels</strong> feature empowers you to create
             custom, high-converting websites and marketing funnels with ease.
-            Whether you're launching a product or building a complex marketing
+            Whether you are launching a product or building a complex marketing
             campaign, Funnels provides the tools you need to succeed.
           </p>
           <h3 className='font-semibold mb-2 mt-4'>Getting Started:</h3>
@@ -155,14 +155,14 @@ const Docs = () => {
           <p className='mb-4'>
             Ventura offers a range of design templates and customization options
             to ensure your funnel not only performs well but also matches your
-            brand's aesthetic. Utilize our drag-and-drop editor to place
+            brands aesthetic. Utilize our drag-and-drop editor to place
             elements precisely where you want them.
           </p>
           <h3 className='font-semibold mb-2'>Integration and Optimization:</h3>
           <p className='mb-4'>
             Integrate your funnels with other Ventura tools for enhanced
             functionality. Add e-commerce capabilities, connect to CRM systems,
-            and use analytics to optimize your funnel's performance continually.
+            and use analytics to optimize your funnels performance continually.
           </p>
         </>
       ),
@@ -174,7 +174,7 @@ const Docs = () => {
       content: (
         <>
           <p className='mb-4'>
-            Ventura's <strong>Pipelines</strong> offer a robust solution for
+            Venturas <strong>Pipelines</strong> offer a robust solution for
             managing your projects and workflows with a flexible Kanban-style
             board. Tailor your pipelines to match your process, from lead
             tracking to task management and everything in between.

@@ -4,7 +4,7 @@ const About = () => {
     {
       question: 'How does Vyntura improve organizational workflow?',
       answer:
-        "Vyntura's productivity app integrates with key tools like Stripe and offers features such as a web builder and task management to streamline operations.",
+        "Vynturas productivity app integrates with key tools like Stripe and offers features such as a web builder and task management to streamline operations.",
     },
     {
       question: 'Can I sell products with Vyntura?',
