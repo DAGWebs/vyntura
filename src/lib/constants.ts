@@ -1,3 +1,4 @@
+/* eslint no-use-before-define: 0 */ // --> OFF
 import BarChart from '@/components/icons/bar_chart';
 import Calendar from '@/components/icons/calendar';
 import CheckCircle from '@/components/icons/check_circled';

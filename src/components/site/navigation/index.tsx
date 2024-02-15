@@ -1,3 +1,4 @@
+/* eslint no-use-before-define: 0 */ // --> OFF
 import { ModeToggle } from '@/components/global/mode-toggle';
 import { UserButton } from '@clerk/nextjs';
 import { User, currentUser } from '@clerk/nextjs/server';

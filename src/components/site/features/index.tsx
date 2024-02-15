@@ -1,10 +1,5 @@
-import {
-  Brain,
-  Coins,
-  PuzzleIcon,
-  Calendar,
-  Wrench,
-} from 'lucide-react'; // Assuming usage of Heroicons for demonstration
+/* eslint no-use-before-define: 0 */ // --> OFF
+import { Brain, Coins, PuzzleIcon, Calendar, Wrench } from 'lucide-react'; // Assuming usage of Heroicons for demonstration
 const FeatureBlock = ({
   title,
   description,
@@ -61,7 +56,10 @@ const Features = () => {
       className='flex justify-center items-center flex-col gap-4 mt-[150px]'
       id='features'
     >
-      <h2 className='text-4xl text-center'> We offer some really cool features</h2>
+      <h2 className='text-4xl text-center'>
+        {' '}
+        We offer some really cool features
+      </h2>
       <p className='dark:text-muted-foreground text-white text-center'>
         Take a look maybe we can help you.
       </p>

@@ -1,21 +1,22 @@
+/* eslint no-use-before-define: 0 */ // --> OFF
 const About = () => {
-     const faqs = [
-       {
-         question: 'How does Vyntura improve organizational workflow?',
-         answer:
-           "Vyntura's productivity app integrates with key tools like Stripe and offers features such as a web builder and task management to streamline operations.",
-       },
-       {
-         question: 'Can I sell products with Vyntura?',
-         answer:
-           'Yes, our seamless integration with Stripe allows for effortless product sales directly through the platform.',
-       },
-       {
-         question: 'What features are included in Vyntura?',
-         answer:
-           'Features include website building, Kanban-like pipelines, automations, invoicing, calendar setup, team management, and more, with continuous development for new features.',
-       },
-     ];
+  const faqs = [
+    {
+      question: 'How does Vyntura improve organizational workflow?',
+      answer:
+        "Vyntura's productivity app integrates with key tools like Stripe and offers features such as a web builder and task management to streamline operations.",
+    },
+    {
+      question: 'Can I sell products with Vyntura?',
+      answer:
+        'Yes, our seamless integration with Stripe allows for effortless product sales directly through the platform.',
+    },
+    {
+      question: 'What features are included in Vyntura?',
+      answer:
+        'Features include website building, Kanban-like pipelines, automations, invoicing, calendar setup, team management, and more, with continuous development for new features.',
+    },
+  ];
   return (
     <section
       className='flex justify-center items-center flex-col gap-4 mt-[150px] bg-black/60 p-10 text-white'
@@ -32,10 +33,10 @@ const About = () => {
               About Vyntura
             </h2>
             <p className='text-lg text-gray-300'>
-              Vyntura is a software development company focused on
-              enhancing organizational workflow. Our flagship productivity app
-              integrates seamlessly with Stripe, enabling organizations to sell
-              products effortlessly.
+              Vyntura is a software development company focused on enhancing
+              organizational workflow. Our flagship productivity app integrates
+              seamlessly with Stripe, enabling organizations to sell products
+              effortlessly.
             </p>
             <p className='text-lg text-gray-300'>
               Features include a versatile website builder, a Kanban-like board

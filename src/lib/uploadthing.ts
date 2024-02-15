@@ -1,10 +1,11 @@
-import { generateComponents } from '@uploadthing/react'
-import { generateReactHelpers } from '@uploadthing/react/hooks'
+/* eslint no-use-before-define: 0 */ // --> OFF
+import { generateComponents } from '@uploadthing/react';
+import { generateReactHelpers } from '@uploadthing/react/hooks';
 
-import type { OurFileRouter } from '@/app/api/uploadthing/core'
+import type { OurFileRouter } from '@/app/api/uploadthing/core';
 
 export const { UploadButton, UploadDropzone, Uploader } =
-  generateComponents<OurFileRouter>()
+  generateComponents<OurFileRouter>();
 
 export const { useUploadThing, uploadFiles } =
-  generateReactHelpers<OurFileRouter>()
+  generateReactHelpers<OurFileRouter>();
