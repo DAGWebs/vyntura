@@ -1,4 +1,4 @@
-import { getInvoiceTemplates, getRateSheets } from '@/lib/queries'
+import { getInvoiceTemplates, delteInvoiceTemplate } from '@/lib/queries';
 import React from 'react'
 import FunnelsDataTable from './data-table'
 import { Plus } from 'lucide-react'
@@ -8,6 +8,8 @@ import InvoiceTemplateForm from '@/components/forms/invoice-template-form'
 
 const invoiceTemplates = async ({ params }: { params: { subaccountId: string } }) => {
   const templates = await getInvoiceTemplates(params.subaccountId)
+  
+  console.log(templates)
   if (!templates) return null
 
   return (

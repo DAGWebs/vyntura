@@ -957,3 +957,9 @@ export const CreateInvoiceTemplate = async (
   );
   return response;
 };
+
+export const delteInvoiceTemplate = async() => {
+  await db.invoiceTemplate.deleteMany({
+    where: { id: '' },
+  });
+}

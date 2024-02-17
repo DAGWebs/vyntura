@@ -13,7 +13,7 @@ export const columns: ColumnDef<InvoiceTemplatesForSubAccount>[] = [
       return (
         <Link
           className='flex gap-2 items-center'
-          href={`/subaccount/${row.original.subAccountId}/invoicing/templates/${row.original.id}/editor/${row.original.id}`}
+          href={`/subaccount/${row.original.subAccountId}/invoicing/templates/${row.original.id}`}
         >
           {row.getValue('name')}
           <ExternalLink size={15} />

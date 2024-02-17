@@ -58,9 +58,9 @@ const InvoiceTemplateForm: React.FC<CreateInvoiceTemplateProps> = ({
     mode: 'onChange',
     resolver: zodResolver(CreateInvoiceTemplateSchema),
     defaultValues: {
+      id: defaultData?.id || v4(),
       name: defaultData?.name || '',
       description: defaultData?.description || '',
-      id: defaultData?.id,
       layout: defaultData?.layout || '[]',
       status: defaultData?.status || 'Draft',
       invoiceNumber: defaultData?.invoiceNumber || '123456',
@@ -80,18 +80,6 @@ const InvoiceTemplateForm: React.FC<CreateInvoiceTemplateProps> = ({
       form.reset({
         name: defaultData?.name || '',
         description: defaultData?.description || '',
-        id: defaultData?.id,
-        layout: defaultData?.layout || '[]',
-        status: defaultData?.status || 'Draft',
-        invoiceNumber: defaultData?.invoiceNumber || '123456',
-        dueDate: defaultData?.dueDate || new Date(),
-        customerName: defaultData?.customerName || '',
-        customerAddress: defaultData?.customerAddress || '',
-        items: defaultData?.items || '[]',
-        notes: defaultData?.notes || '',
-        subAccountId: defaultData?.subAccountId || subAccountId,
-        createdAt: new Date(),
-        updatedAt: new Date(),
       });
     }
   }, [defaultData]);
@@ -101,11 +89,9 @@ const InvoiceTemplateForm: React.FC<CreateInvoiceTemplateProps> = ({
   const onSubmit = async (
     values: z.infer<typeof CreateInvoiceTemplateSchema>,
   ) => {
+    console.log(values)
     if (!subAccountId) return;
-    if (values === null) return;
-    const response = await CreateInvoiceTemplate(subAccountId, {
-      ...values,
-    });
+    const response = await CreateInvoiceTemplate(subAccountId, {...values });
     await saveActivityLogsNotification({
       agencyId: undefined,
       description: `Update invoice template | ${defaultData?.name || ''}`,
