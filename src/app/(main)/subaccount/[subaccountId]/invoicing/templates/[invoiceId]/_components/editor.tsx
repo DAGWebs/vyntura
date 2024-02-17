@@ -62,7 +62,7 @@ const InvoiceTemplate = () => {
   };
 
   // Function to remove an item by index
-  const removeItem = (index) => {
+  const removeItem = (index: any) => {
     const filteredItems = invoice.items.filter((_, i) => i !== index);
     setInvoice({ ...invoice, items: filteredItems });
   };
@@ -75,7 +75,7 @@ const InvoiceTemplate = () => {
             Invoice{' '}
             <EditableField
               value={invoice.id}
-              onChange={(e: any) => handleChange(e)}
+              onChange={(e: any) => handleChange(e, '', '')}
               name='id'
             />
           </h1>
@@ -83,7 +83,7 @@ const InvoiceTemplate = () => {
             Date:{' '}
             <EditableField
               value={invoice.date}
-              onChange={(e: any) => handleChange(e)}
+              onChange={(e: any) => handleChange(e, '', '')}
               name='date'
               type='date'
             />
@@ -93,7 +93,7 @@ const InvoiceTemplate = () => {
           <h1 className='text-3xl font-bold text-white'>
             <EditableField
               value='{COMPANY NAME}'
-              onChange={(e: any) => handleChange(e)}
+              onChange={(e: any) => handleChange(e, '', '')}
               name='companyname'
               type='text'
             />
@@ -101,7 +101,7 @@ const InvoiceTemplate = () => {
           <p className='text-white'>
             <EditableField
               value='{COMPANY Address}'
-              onChange={(e: any) => handleChange(e)}
+              onChange={(e: any) => handleChange(e, '', '')}
               name='Address'
               type='text'
             />
@@ -113,12 +113,12 @@ const InvoiceTemplate = () => {
         <h2 className='text-xl font-semibold text-white'>Bill To:</h2>
         <EditableField
           value={invoice.customerName}
-          onChange={(e) => handleChange(e)}
+          onChange={(e: any) => handleChange(e, '', '')}
           name='customerName'
         />
         <EditableField
           value={invoice.customerAddress}
-          onChange={(e) => handleChange(e)}
+          onChange={(e: any) => handleChange(e, '', '')}
           name='customerAddress'
         />
       </div>
@@ -143,14 +143,14 @@ const InvoiceTemplate = () => {
                 <td className='py-2 px-4'>
                   <EditableField
                     value={item.description}
-                    onChange={(e) => handleChange(e, index, 'description')}
+                    onChange={(e: any) => handleChange(e, index, 'description')}
                     placeholder='Enter Item Name'
                   />
                 </td>
                 <td className='py-2 px-4'>
                   <EditableField
                     value={item.quantity}
-                    onChange={(e) => handleChange(e, index, 'quantity')}
+                    onChange={(e: any) => handleChange(e, index, 'quantity')}
                     fieldType='number'
                     placeholder='Enter Quantity'
                   />
@@ -158,7 +158,7 @@ const InvoiceTemplate = () => {
                 <td className='py-2 px-4'>
                   <EditableField
                     value={item.price}
-                    onChange={(e) => handleChange(e, index, 'price')}
+                    onChange={(e: any) => handleChange(e, index, 'price')}
                     fieldType='number'
                     placeholder='Enter Price'
                   />
@@ -196,11 +196,16 @@ const InvoiceTemplate = () => {
       </div>
 
       <div className='mt-8'>
-        <label htmlFor="notes" className='text-muted-foreground mb-3 p-4'>Add Some Notes Downe here</label>
+        <label
+          htmlFor='notes'
+          className='text-muted-foreground mb-3 p-4'
+        >
+          Add Some Notes Downe here
+        </label>
         <textarea
           value={invoice.notes}
-          onChange={(e) => handleChange(e)}
-          id="notes"
+          onChange={(e) => handleChange(e, "", "")}
+          id='notes'
           name='notes'
           className='w-full mt-4 border-black border-2 bg-transparent rounded-lg p-6'
         />
