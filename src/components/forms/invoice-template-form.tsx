@@ -78,10 +78,11 @@ const InvoiceTemplateForm: React.FC<CreateInvoiceTemplateProps> = ({
     values: z.infer<typeof CreateInvoiceTemplateSchema>,
   ) => {
     if (!subAccountId) return;
-    const response = await CreateInvoiceTemplate(subAccountId, {...values})
+    if (values === null) return;
+    const response = await CreateInvoiceTemplate(subAccountId, { ...values });
     await saveActivityLogsNotification({
       agencyId: undefined,
-      description: `Update funnel | ${response.name}`,
+      description: `Update funnel | ${defaultData?.name || ''}`,
       subaccountId: subAccountId,
     });
     if (response)
