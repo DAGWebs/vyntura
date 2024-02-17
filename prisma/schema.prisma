@@ -78,58 +78,61 @@ model Permissions {
 }
 
 model Agency {
-  id               String                @id @default(uuid())
-  connectAccountId String?               @default("")
-  customerId       String                @default("")
-  name             String
-  agencyLogo       String                @db.Text
-  companyEmail     String                @db.Text
-  companyPhone     String
-  whiteLabel       Boolean               @default(true)
-  address          String
-  city             String
-  zipCode          String
-  state            String
-  country          String
-  goal             Int                   @default(5)
-  users            User[]
-  createdAt        DateTime              @default(now())
-  updatedAt        DateTime              @updatedAt
-  SubAccount       SubAccount[]
-  SidebarOption    AgencySidebarOption[]
-  Invitation       Invitation[]
-  Notification     Notification[]
-  Subscription     Subscription?
-  AddOns           AddOns[]
+  id                String                @id @default(uuid())
+  connectAccountId  String?               @default("")
+  customerId        String                @default("")
+  name              String
+  agencyLogo        String                @db.Text
+  companyEmail      String                @db.Text
+  companyPhone      String
+  whiteLabel        Boolean               @default(true)
+  address           String
+  city              String
+  zipCode           String
+  state             String
+  country           String
+  goal              Int                   @default(5)
+  users             User[]
+  createdAt         DateTime              @default(now())
+  updatedAt         DateTime              @updatedAt
+  SubAccount        SubAccount[]
+  SidebarOption     AgencySidebarOption[]
+  Invitation        Invitation[]
+  Notification      Notification[]
+  Subscription      Subscription?
+  AddOns            AddOns[]
+  RateSheetTemplate RateSheetTemplate[]
 }
 
 model SubAccount {
-  id               String                    @id @default(uuid())
-  connectAccountId String?                   @default("")
-  name             String
-  subAccountLogo   String                    @db.Text
-  createdAt        DateTime                  @default(now())
-  updatedAt        DateTime                  @updatedAt
-  companyEmail     String                    @db.Text
-  companyPhone     String
-  goal             Int                       @default(5)
-  address          String
-  city             String
-  zipCode          String
-  state            String
-  country          String
-  agencyId         String
-  Agency           Agency                    @relation(fields: [agencyId], references: [id], onDelete: Cascade)
-  SidebarOption    SubAccountSidebarOption[]
-  Permissions      Permissions[]
-  Funnels          Funnel[]
-  Media            Media[]
-  Contact          Contact[]
-  Trigger          Trigger[]
-  Automation       Automation[]
-  Pipeline         Pipeline[]
-  Tags             Tag[]
-  Notification     Notification[]
+  id                String                    @id @default(uuid())
+  connectAccountId  String?                   @default("")
+  name              String
+  subAccountLogo    String                    @db.Text
+  createdAt         DateTime                  @default(now())
+  updatedAt         DateTime                  @updatedAt
+  companyEmail      String                    @db.Text
+  companyPhone      String
+  goal              Int                       @default(5)
+  address           String
+  city              String
+  zipCode           String
+  state             String
+  country           String
+  agencyId          String
+  Agency            Agency                    @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+  SidebarOption     SubAccountSidebarOption[]
+  Permissions       Permissions[]
+  Funnels           Funnel[]
+  Media             Media[]
+  Contact           Contact[]
+  Trigger           Trigger[]
+  Automation        Automation[]
+  Pipeline          Pipeline[]
+  Tags              Tag[]
+  Notification      Notification[]
+  RateSheetTemplate RateSheetTemplate[]
+  InvoiceTemplate   InvoiceTemplate[]
 
   @@index([agencyId])
 }
@@ -430,4 +433,52 @@ model AddOns {
   Agency    Agency?  @relation(fields: [agencyId], references: [id])
 
   @@index([agencyId])
+}
+
+enum InvoicePaymentStatus {
+  PAID
+  PENDING
+  DUE
+  PASTDUE
+}
+
+model RateSheetTemplate {
+  id     String @id @default(uuid())
+  name   String
+  fields String @db.Text
+
+  agencyId     String?
+  subAccountId String?
+
+  Agency     Agency?     @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+  SubAccount SubAccount? @relation(fields: [subAccountId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([agencyId])
+  @@index([subAccountId])
+}
+
+model InvoiceTemplate {
+  id          String @id @default(uuid())
+  name        String
+  layout      String @db.Text
+  description String
+  status      String @default("Draft")
+  invoiceNumber String @default("NULL")
+  dueDate DateTime @default(now())
+  customerName String @default("Test User")
+  customerAddress String @default("testuser@gmail.com")
+  items String @db.Text 
+  notes String @default("")
+
+  subAccountId String
+  SubAccount   SubAccount? @relation(fields: [subAccountId], references: [id], onDelete: Cascade)
+
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([subAccountId])
 }

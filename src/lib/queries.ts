@@ -6,6 +6,7 @@ import { db } from './db';
 import { redirect } from 'next/navigation';
 import {
   Agency,
+  InvoiceTemplate,
   Lane,
   Plan,
   Prisma,
@@ -905,5 +906,54 @@ export const getPipelines = async (subaccountId: string) => {
       },
     },
   });
+  return response;
+};
+
+export const getRateSheets = async (subaccountId: string) => {
+  const response = await db.rateSheetTemplate.findMany({
+    where: { subAccountId: subaccountId },
+  });
+
+  return response;
+};
+
+export const getInvoiceTemplates = async (subAccountId: string) => {
+  const response = await db.invoiceTemplate.findMany({
+    where: { subAccountId: subAccountId },
+  });
+
+  return response;
+};
+
+export const CreateInvoiceTemplate = async (
+  subaccountId: string,
+  invoiceTemplate: InvoiceTemplate,
+) => {
+  if (!subaccountId) return;
+  const response = await db.invoiceTemplate.upsert({
+    where: { id: invoiceTemplate.id || '' },
+    update: { ...invoiceTemplate },
+    create: {
+      ...invoiceTemplate,
+      subAccountId: subaccountId,
+      layout: invoiceTemplate.layout
+        ? invoiceTemplate.layout
+        : JSON.stringify([
+            {
+              content: [],
+              id: '__body',
+              name: 'Body',
+              styles: { backgroundColor: 'white' },
+              type: '__body',
+            },
+          ]),
+      items: invoiceTemplate.items ? invoiceTemplate.items : JSON.stringify([]),
+    },
+  });
+
+  revalidatePath(
+    `/subaccount/${subaccountId}/invoicing/templates/${invoiceTemplate.id}`,
+    'page',
+  );
   return response;
 };
