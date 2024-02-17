@@ -55,6 +55,18 @@ export const CreateInvoiceTemplateSchema = z.object({
   description: z.string().min(3, {
     message: 'The template description needs at least 3 characters',
   }),
+  id: z.string(),
+  layout: z.string(),
+  status: z.string(),
+  invoiceNumber: z.string(),
+  dueDate: z.date(),
+  customerName: z.string(),
+  customerAddress: z.string(),
+  items: z.string(),
+  notes: z.string(),
+  subAccountId: z.string(),
+  createdAt: z.date(),
+  updatedAt: z.date(),
 });
 
 const __getUsersWithAgencySubAccountPermissionsSidebarOptions = async (

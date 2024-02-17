@@ -60,6 +60,18 @@ const InvoiceTemplateForm: React.FC<CreateInvoiceTemplateProps> = ({
     defaultValues: {
       name: defaultData?.name || '',
       description: defaultData?.description || '',
+      id: '',
+      layout: '',
+      status: '',
+      invoiceNumber: '',
+      dueDate: new Date(),
+      customerName: '',
+      customerAddress: '',
+      items: '',
+      notes: '',
+      subAccountId: '',
+      createdAt: new Date(),
+      updatedAt: new Date(),
     },
   });
 
@@ -81,18 +93,7 @@ const InvoiceTemplateForm: React.FC<CreateInvoiceTemplateProps> = ({
     if (values === null) return;
     const response = await CreateInvoiceTemplate(subAccountId, {
       ...values,
-      id: '',
-      layout: '',
-      status: '',
-      invoiceNumber: '',
-      dueDate: new Date(),
-      customerName: '',
-      customerAddress: '',
-      items: '',
-      notes: '',
-      subAccountId: '',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      
     });
     await saveActivityLogsNotification({
       agencyId: undefined,
